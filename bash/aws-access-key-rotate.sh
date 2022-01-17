@@ -1,4 +1,18 @@
 #!/bin/bash
+echo "     _______ _____  _____       __          _______   ";
+echo "    |__   __|_   _|/ ____|     /\ \        / / ____|  ";
+echo "       | |    | | | (___      /  \ \  /\  / / (___    ";
+echo "       | |    | |  \___ \    / /\ \ \/  \/ / \___ \   ";
+echo "       | |   _| |_ ____) |  / ____ \  /\  /  ____) |  ";
+echo "  _  __|_|  |_____|_____/  /_/ _  \_\/  \/  |_____/   ";
+echo " | |/ /           |  __ \     | |      | |            ";
+echo " | ' / ___ _   _  | |__) |___ | |_ __ _| |_ ___  _ __ ";
+echo " |  < / _ \ | | | |  _  // _ \| __/ _\` | __/ _ \| '__|";
+echo " | . \  __/ |_| | | | \ \ (_) | || (_| | || (_) | |   ";
+echo " |_|\_\___|\__, | |_|  \_\___/ \__\__,_|\__\___/|_|   ";
+echo "            __/ |                                     ";
+echo "           |___/                                      ";
+echo " "
 echo "[+] Comparing AWS held keys with local settings ..."
 currentawskey1=$(aws iam list-access-keys | jq '.AccessKeyMetadata[0]' | grep AccessKeyId | cut -d '"' -f 4 | tr -d '\042\054\040')
 currentawskey2=$(aws iam list-access-keys | jq '.AccessKeyMetadata[1]' | grep AccessKeyId | cut -d '"' -f 4 | tr -d '\042\054\040')
